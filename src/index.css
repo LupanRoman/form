@@ -7,3 +7,58 @@
 * {
   font-family: 'Ubuntu';
 }
+
+.nav-links {
+  top: 0px;
+  padding-top: 30px;
+  padding-left: 80px;
+  padding-right: 80px;
+  color: white;
+}
+
+.link-btn {
+  height: 30px;
+  width: 30px;
+  /* background-color: hsl(229, 24%, 87%); */
+  border: 2px solid hsl(229, 24%, 87%);
+  border-radius: 100%;
+}
+
+.link-btn:active {
+  background-color: hsl(229, 24%, 87%);
+  color: black;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-links {
+    top: 0px;
+    padding-left: 30px;
+    /* padding-right: 10px; */
+  }
+  
+}
+
+.desktop-image {
+  height: 94vh;
+}
+
+
+/* .nav-image {
+  background-image: url(./assets//bg-sidebar-mobile.svg);
+  height: 20vh;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-image {
+    background-image: url(./assets/bg-sidebar-desktop.svg);
+    width: 30vw;
+    
+  }
+} */
