@@ -5,11 +5,11 @@ import PersInfo from './components/PersInfo';
 const App = () => {
   return (
     <>
-      <div className="h-screen flex flex-col md:flex-row md:p-5">
-        <div className="">
+      <div className="grid-component">
+        <div className="navigation">
           <Nav />
         </div>
-        <div className="mt-20">
+        <div className="content flex flex-col w-full h-full p-5 bg-magnolia md:bg-white md:pt-5">
           <PersInfo />
         </div>
       </div>

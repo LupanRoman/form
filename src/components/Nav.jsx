@@ -1,57 +1,48 @@
 import React from 'react';
 import ImgMob from '../assets/bg-sidebar-mobile.svg';
-import ImgPc from '../assets/bg-sidebar-desktop.svg';
 
 const Nav = () => {
   return (
     <>
-      <div className="navbar relative">
+      <div className="">
         <img
           src={ImgMob}
           alt="brand image for mobile screens"
-          className="mob-image flex md:hidden w-full"
+          className="flex md:hidden w-full"
         />
-        <img
-          src={ImgPc}
-          alt="brand image for desktop screens"
-          className=" desktop-image hidden md:flex"
-        />
+        <div className="image"></div>
         {/* Links for navigation */}
-        <div className="nav-links absolute flex justify-between w-full md:flex-col md:gap-8">
-          <div className="flex items-center md:gap-5">
+        <div className="flex absolute top-5 left-20 right-16 justify-between md:flex-col md:gap-5 md:left-8 md:top-10 md:right-96 ">
+          <div className="flex md:gap-4 items-center">
             <button className="link-btn">1</button>
-            <p className="hidden md:flex flex-col text-xs text-pastel">
+            <p className="hidden md:flex md:flex-col text-xs text-pastel">
               STEP 1<br />
-              <span className="font-bold text-light-gray text-sm ">
+              <span className="text-white text-md font-extrabold">
                 YOUR INFO
               </span>
             </p>
           </div>
-          <div className="flex items-center md:gap-5">
+          <div className="flex md:gap-4 items-center">
             <button className="link-btn">2</button>
-            <p className="hidden md:flex flex-col text-xs text-pastel">
+            <p className="hidden md:flex md:flex-col text-xs text-pastel">
               STEP 2<br />
-              <span className="font-bold text-light-gray text-sm ">
+              <span className="text-white text-md font-extrabold">
                 SELECT PLAN
               </span>
             </p>
           </div>
-          <div className="flex items-center md:gap-5">
+          <div className="flex md:gap-4 items-center">
             <button className="link-btn">3</button>
-            <p className="hidden md:flex flex-col text-xs text-pastel">
+            <p className="hidden md:flex md:flex-col text-xs text-pastel">
               STEP 3<br />
-              <span className="font-bold text-light-gray text-sm ">
-                ADD-ONS
-              </span>
+              <span className="text-white text-md font-extrabold">ADD-ONS</span>
             </p>
           </div>
-          <div className="flex items-center md:gap-5">
+          <div className="flex md:gap-4 items-center">
             <button className="link-btn">4</button>
-            <p className="hidden md:flex flex-col text-xs text-pastel">
+            <p className="hidden md:flex md:flex-col text-xs text-pastel">
               STEP 4<br />
-              <span className="font-bold text-light-gray text-sm ">
-                SUMMARY
-              </span>
+              <span className="text-white text-md font-extrabold">SUMMARY</span>
             </p>
           </div>
         </div>
