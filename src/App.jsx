@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from './components/Nav';
 import PersInfo from './components/PersInfo';
+import Plan from './components/Plan';
 
 const App = () => {
   return (
@@ -10,7 +11,8 @@ const App = () => {
           <Nav />
         </div>
         <div className="content flex flex-col w-full h-full p-5 bg-magnolia md:bg-white md:pt-5">
-          <PersInfo />
+          {/* <PersInfo />        */}
+          <Plan />
         </div>
       </div>
     </>

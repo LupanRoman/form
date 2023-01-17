@@ -5,7 +5,7 @@ const PersInfo = () => {
     <>
       <div className="flex h-full flex-col justify-between relative">
         <div className="flex flex-col p-5 gap-4 bg-white rounded-md">
-          <h3 className="font-extrabold text-marine-blue text-2xl md:text-3xl">
+          <h3 className="font-extrabold text-marine-blue text-2xl md:text-3xl md:p-0">
             Personal info
           </h3>
           <p className="text-xs md:text-base lg:text-lg text-cool-gray">
