@@ -50,17 +50,22 @@
   background-color: hsl(217, 100%, 97%);
 }
 
-/* Switch toggle */
+.plan-option img {
+  height: 40px;
+  width: 40px;
+}
 
-/* input[type="checkbox"] {
+/* * Start of switch toggle */
+
+input[type="checkbox"] {
   width: 0;
   height: 0;
   visibility: hidden;
 }
 
-label {
-  width: 60px;
-  height: 30px;
+.switch {
+  width: 50px;
+  height: 20px;
   display:block;
   background-color: hsl(213, 96%, 18%);
   border-radius: 20px;
@@ -69,34 +74,26 @@ label {
   transition: 0.5s;
 }
 
-
-
-label::after {
+.switch::after {
   content: "";
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 15px;
   background-color: #e8f5f7;
   position: absolute;
   border-radius: 100%;
-  top: 2px;
+  top: 2.5px;
   left: 2px;
   transition: 0.5s;
 }
 
-input:checked + label:after {
+input:checked + .switch:after {
   left: calc(100% - 2px);
   transform: translateX(-100%);
-} */
+} 
 
+/* * End of switch toggle */
 
-
-/* label:active:after {
-  width: 17px;
-} */
-
-
-
-/* Switch toggle */
+/* *! For screens above 768px  */
 
 @media screen and (min-width: 768px) {
   /* Responsive design */
@@ -126,19 +123,22 @@ input:checked + label:after {
     height: 50px;
   }
 
-  .plan-option {
-    padding-top: 20px;
-    padding-left: 10px;
-    padding-right: 80px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 150px;
+    margin-top: 20px;
   }
 
-  .plan-option img {
-    height: 50px;
+  .plan-option {
+    flex-direction: column;
+    justify-content: space-between;
   }
+
+  
 }
+
+/* *! For screens above 1438px  */
 
 @media screen and (min-width: 1438px) {
   .navigation {
