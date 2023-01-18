@@ -41,7 +41,12 @@ const Plan = () => {
           <div className="flex w-full justify-between items-center bg-magnolia pt-3 pb-3 pl-5 pr-5 rounded-lg">
             <h6 className="font-bold text-marine-blue">Monthly</h6>
             <div className="flex">
-              <input type="checkbox" name="switch" id="switch" />
+              <input
+                type="checkbox"
+                name="switch"
+                id="switch"
+                className="toggle"
+              />
               <label htmlFor="switch" className="switch"></label>
             </div>
             <h6 className="font-bold text-marine-blue">Yearly</h6>

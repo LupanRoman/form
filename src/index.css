@@ -55,9 +55,30 @@
   width: 40px;
 }
 
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid hsl(231, 11%, 63%);
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.option p {
+  font-size: 10px;
+}
+
+.option:active {
+  border: 1px solid hsl(213, 96%, 18%);
+  background-color: hsl(217, 100%, 97%);
+}
+
 /* * Start of switch toggle */
 
-input[type="checkbox"] {
+.toggle {
   width: 0;
   height: 0;
   visibility: hidden;
@@ -86,7 +107,7 @@ input[type="checkbox"] {
   transition: 0.5s;
 }
 
-input:checked + .switch:after {
+.toggle:checked + .switch:after {
   left: calc(100% - 2px);
   transform: translateX(-100%);
 } 
@@ -133,6 +154,20 @@ input:checked + .switch:after {
   .plan-option {
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  .option {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+  }
+
+  .option h6 {
+    font-size: 15px;
+  }
+
+  .option p {
+    font-size: 12px;
   }
 
   

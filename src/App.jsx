@@ -5,6 +5,7 @@ import PersInfo from './components/PersInfo';
 import Plan from './components/Plan';
 import AddOns from './components/AddOns';
 import Summary from './components/Summary';
+import Finish from './components/Finish';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
               <Route path="/plan" element={<Plan />} />
               <Route path="/add-ons" element={<AddOns />} />
               <Route path="/summary" element={<Summary />} />
+              <Route path="/finish" element={<Finish />} />
             </Routes>
           </div>
         </div>
