@@ -34,6 +34,7 @@
   border-radius: 5px;
   text-indent: 15px;
   cursor: pointer;
+  margin-bottom: 20px;
   
 }
 
@@ -51,7 +52,7 @@
 
 /* Switch toggle */
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
   width: 0;
   height: 0;
   visibility: hidden;
@@ -85,7 +86,7 @@ label::after {
 input:checked + label:after {
   left: calc(100% - 2px);
   transform: translateX(-100%);
-}
+} */
 
 
 
@@ -96,6 +97,7 @@ input:checked + label:after {
 
 
 /* Switch toggle */
+
 @media screen and (min-width: 768px) {
   /* Responsive design */
   .grid-component {
@@ -116,9 +118,12 @@ input:checked + label:after {
   }
 
   .content {
-    grid-column: 3/7;
+    grid-column: 4/7;
     grid-row: 1/4;
-    /* display: flex; */
+  }
+
+  .input {
+    height: 50px;
   }
 
   .plan-option {

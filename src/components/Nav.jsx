@@ -1,10 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ImgMob from '../assets/bg-sidebar-mobile.svg';
 
 const Nav = () => {
   return (
     <>
-      <div className="">
         <img
           src={ImgMob}
           alt="brand image for mobile screens"
@@ -13,10 +13,11 @@ const Nav = () => {
         <div className="image"></div>
         {/* Links for navigation */}
         <div className="flex absolute top-5 left-20 right-16 justify-between md:flex-col md:gap-7 md:left-16 md:top-20 md:right-96 ">
+        
           <div className="flex md:gap-4 items-center">
-            <a href="/Plan">
+            <Link to="/">
               <button className="link-btn">1</button>
-            </a>
+            </Link>
             <p className="hidden md:flex md:flex-col text-xs text-pastel">
               STEP 1<br />
               <span className="text-white text-md font-extrabold">
@@ -24,8 +25,11 @@ const Nav = () => {
               </span>
             </p>
           </div>
+
           <div className="flex md:gap-4 items-center">
-            <button className="link-btn">2</button>
+            <Link to="/plan">
+              <button className="link-btn">2</button>
+            </Link>
             <p className="hidden md:flex md:flex-col text-xs text-pastel">
               STEP 2<br />
               <span className="text-white text-md font-extrabold">
@@ -33,22 +37,28 @@ const Nav = () => {
               </span>
             </p>
           </div>
+
           <div className="flex md:gap-4 items-center">
-            <button className="link-btn">3</button>
+            <Link to="/add-ons">
+              <button className="link-btn">3</button>
+            </Link>
             <p className="hidden md:flex md:flex-col text-xs text-pastel">
               STEP 3<br />
               <span className="text-white text-md font-extrabold">ADD-ONS</span>
             </p>
           </div>
+
           <div className="flex md:gap-4 items-center">
-            <button className="link-btn">4</button>
+            <Link to="/summary">
+              <button className="link-btn">4</button>
+            </Link>
             <p className="hidden md:flex md:flex-col text-xs text-pastel">
               STEP 4<br />
               <span className="text-white text-md font-extrabold">SUMMARY</span>
             </p>
           </div>
+
         </div>
-      </div>
     </>
   );
 };
