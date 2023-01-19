@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Arcade from '../assets/icon-arcade.svg';
 import Advanced from '../assets/icon-advanced.svg';
 import Pro from '../assets/icon-pro.svg';
+import StateContext from '../../context/StateContext';
 
 const Plan = () => {
+  const { planSelection, store } = useContext(StateContext);
+
   return (
     <>
       <div className="flex flex-col justify-between items-center h-full relative md:w-full">
@@ -16,21 +19,33 @@ const Plan = () => {
             You have the option of monthly or yearly billing.
           </p>
           <div className="plans flex flex-col gap-2 md:flex-row">
-            <div className="plan-option flex gap-4 md:flex-col">
+            <div
+              className="plan-option flex gap-4 md:flex-col"
+              id="arcade"
+              onClick={planSelection}
+            >
               <img src={Arcade} alt="" />
               <div className="flex flex-col gap-1">
                 <h6 className="font-bold text-sm text-marine-blue">Arcade</h6>
                 <p className="text-xs text-cool-gray">$9/mo</p>
               </div>
             </div>
-            <div className="plan-option flex gap-4">
+            <div
+              className="plan-option flex gap-4"
+              id="advanced"
+              onClick={planSelection}
+            >
               <img src={Advanced} alt="" />
               <div className="flex flex-col gap-1">
                 <h6 className="font-bold text-sm text-marine-blue">Advanced</h6>
                 <p className="text-xs text-cool-gray">$12/mo</p>
               </div>
             </div>
-            <div className="plan-option flex gap-4">
+            <div
+              className="plan-option flex gap-4"
+              id="pro"
+              onClick={planSelection}
+            >
               <img src={Pro} alt="" />
               <div className="flex flex-col gap-1">
                 <h6 className="font-bold text-sm text-marine-blue">Pro</h6>
@@ -39,7 +54,9 @@ const Plan = () => {
             </div>
           </div>
           <div className="flex w-full justify-between items-center bg-magnolia pt-3 pb-3 pl-5 pr-5 rounded-lg">
-            <h6 className="font-bold text-marine-blue">Monthly</h6>
+            <h6 className="font-bold text-marine-blue" onClick={store}>
+              Monthly
+            </h6>
             <div className="flex">
               <input
                 type="checkbox"
