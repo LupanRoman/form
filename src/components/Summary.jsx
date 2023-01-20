@@ -3,14 +3,12 @@ import { Link } from 'react-router-dom';
 import StateContext from '../../context/StateContext';
 
 const Summary = () => {
-  // const { store } = useContext(StateContext);
+  const { plan } = useContext(StateContext);
   return (
     <>
       <div className="flex flex-col justify-between items-center h-full relative md:w-full">
         <div className="flex flex-col gap-4 md:gap-2 bg-alabaster p-5 rounded-lg absolute -top-20 md:top-0 md:bg-white md:p-0 md:pt-20 md:w-full">
-          <h2
-            className="text-marine-blue font-extrabold text-xl md:text-3xl"
-          >
+          <h2 className="text-marine-blue font-extrabold text-xl md:text-3xl">
             Finishing up
           </h2>
           <p className="text-cool-gray text-sm md:text-base ">
@@ -20,7 +18,7 @@ const Summary = () => {
             <div className="flex justify-between items-center mb-3">
               <div>
                 <h6 className="font-bold text-marine-blue text-sm">
-                  Arcade(Monthly)
+                  {plan}
                 </h6>
                 <Link to="/plan">
                   <p className="text-cool-gray text-xs underline">Change</p>

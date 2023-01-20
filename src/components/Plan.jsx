@@ -6,7 +6,8 @@ import Pro from '../assets/icon-pro.svg';
 import StateContext from '../../context/StateContext';
 
 const Plan = () => {
-  const { planSelection, store } = useContext(StateContext);
+  const { planSelection, changeData, priceArc, priceAdv, pricePro } =
+    useContext(StateContext);
 
   return (
     <>
@@ -20,49 +21,63 @@ const Plan = () => {
           </p>
           <div className="plans flex flex-col gap-2 md:flex-row">
             <div
-              className="plan-option flex gap-4 md:flex-col"
-              id="arcade"
+              className="plan-option flex gap-4 md:flex-col items-center"
+              id="Arcade"
               onClick={planSelection}
             >
               <img src={Arcade} alt="" />
               <div className="flex flex-col gap-1">
                 <h6 className="font-bold text-sm text-marine-blue">Arcade</h6>
-                <p className="text-xs text-cool-gray">$9/mo</p>
+                <p className="text-xs text-cool-gray" id="priceArc">
+                  {`$${priceArc}/mo`}
+                </p>
+                <p className="hidden text-xs text-marine-blue" id="promo-arc">
+                  2 months free
+                </p>
               </div>
             </div>
             <div
-              className="plan-option flex gap-4"
-              id="advanced"
+              className="plan-option flex gap-4 items-center"
+              id="Advanced"
               onClick={planSelection}
             >
               <img src={Advanced} alt="" />
               <div className="flex flex-col gap-1">
                 <h6 className="font-bold text-sm text-marine-blue">Advanced</h6>
-                <p className="text-xs text-cool-gray">$12/mo</p>
+                <p className="text-xs text-cool-gray" id="priceAdv">
+                  {`$${priceAdv}/mo`}
+                </p>
+                <p className="hidden text-xs text-marine-blue" id="promo-adv">
+                  2 months free
+                </p>
               </div>
             </div>
             <div
-              className="plan-option flex gap-4"
-              id="pro"
+              className="plan-option flex gap-4 items-center"
+              id="Pro"
               onClick={planSelection}
             >
               <img src={Pro} alt="" />
               <div className="flex flex-col gap-1">
                 <h6 className="font-bold text-sm text-marine-blue">Pro</h6>
-                <p className="text-xs text-cool-gray">$15/mo</p>
+                <p className="text-xs text-cool-gray" id="pricePro">
+                  {`$${pricePro}/mo`}
+                </p>
+                <p className="hidden text-xs text-marine-blue" id="promo-pro">
+                  2 months free
+                </p>
               </div>
             </div>
           </div>
           <div className="flex w-full justify-between items-center bg-magnolia pt-3 pb-3 pl-5 pr-5 rounded-lg">
-            <h6 className="font-bold text-marine-blue" onClick={store}>
-              Monthly
-            </h6>
+            <h6 className="font-bold text-marine-blue">Monthly</h6>
             <div className="flex">
               <input
                 type="checkbox"
                 name="switch"
                 id="switch"
                 className="toggle"
+                onChange={changeData}
               />
               <label htmlFor="switch" className="switch"></label>
             </div>

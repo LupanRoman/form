@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import StateContext from '../../context/StateContext';
 
 const AddOns = () => {
-  const { } = useContext(StateContext);
+  const { addOn } = useContext(StateContext);
   return (
     <>
       <div className="flex flex-col justify-between items-center h-full relative md:w-full">
@@ -17,7 +17,7 @@ const AddOns = () => {
           <div className="flex flex-col gap-3">
             <div className="option">
               <div className="flex gap-3">
-                <input type="checkbox" name="" id="" className="check-add-on" />
+                <input type="checkbox" name="" id="" className="check-add-on" onChange={addOn} />
                 <div>
                   <h6 className="text-xs font-bold text-marine-blue">
                     Online service
