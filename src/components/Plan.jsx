@@ -6,7 +6,7 @@ import Pro from '../assets/icon-pro.svg';
 import StateContext from '../../context/StateContext';
 
 const Plan = () => {
-  const { planSelection, changeData, priceArc, priceAdv, pricePro } =
+  const { planSelection, changeData, priceArc, priceAdv, pricePro, timePeriod } =
     useContext(StateContext);
 
   return (
@@ -29,7 +29,7 @@ const Plan = () => {
               <div className="flex flex-col gap-1">
                 <h6 className="font-bold text-sm text-marine-blue">Arcade</h6>
                 <p className="text-xs text-cool-gray" id="priceArc">
-                  {`$${priceArc}/mo`}
+                  {`$${priceArc}/${timePeriod}`}
                 </p>
                 <p className="hidden text-xs text-marine-blue" id="promo-arc">
                   2 months free
@@ -45,7 +45,7 @@ const Plan = () => {
               <div className="flex flex-col gap-1">
                 <h6 className="font-bold text-sm text-marine-blue">Advanced</h6>
                 <p className="text-xs text-cool-gray" id="priceAdv">
-                  {`$${priceAdv}/mo`}
+                  {`$${priceAdv}/${timePeriod}`}
                 </p>
                 <p className="hidden text-xs text-marine-blue" id="promo-adv">
                   2 months free
@@ -61,7 +61,7 @@ const Plan = () => {
               <div className="flex flex-col gap-1">
                 <h6 className="font-bold text-sm text-marine-blue">Pro</h6>
                 <p className="text-xs text-cool-gray" id="pricePro">
-                  {`$${pricePro}/mo`}
+                  {`$${pricePro}/${timePeriod}`}
                 </p>
                 <p className="hidden text-xs text-marine-blue" id="promo-pro">
                   2 months free

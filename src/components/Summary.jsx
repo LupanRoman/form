@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import StateContext from '../../context/StateContext';
 
 const Summary = () => {
-  const { plan } = useContext(StateContext);
+  const { plan, planPrice, timePeriod } = useContext(StateContext);
   return (
     <>
       <div className="flex flex-col justify-between items-center h-full relative md:w-full">
@@ -24,7 +24,7 @@ const Summary = () => {
                   <p className="text-cool-gray text-xs underline">Change</p>
                 </Link>
               </div>
-              <p className="text-marine-blue font-bold text-sm">$9/mo</p>
+              <p className="text-marine-blue font-bold text-sm">{`$${planPrice}/${timePeriod}`}</p>
             </div>
             <hr />
             <div className="flex justify-between pt-3 pb-3">

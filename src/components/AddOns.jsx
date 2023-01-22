@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import StateContext from '../../context/StateContext';
 
 const AddOns = () => {
-  const { addOn } = useContext(StateContext);
+  const { addOn, os, ls, cp, timePeriod } = useContext(StateContext);
   return (
     <>
       <div className="flex flex-col justify-between items-center h-full relative md:w-full">
@@ -25,7 +25,7 @@ const AddOns = () => {
                   <p className="text-cool-gray">Access to multiplayer games</p>
                 </div>
               </div>
-              <p className="text-xs text-purplish-blue font-bold">+$1/mo</p>
+              <p className="text-xs text-purplish-blue font-bold">{`+$${os}/${timePeriod}`}</p>
             </div>
             <div className="option">
               <div className="flex gap-3">
@@ -37,7 +37,7 @@ const AddOns = () => {
                   <p className="text-cool-gray">Extra 1TB of cloud save</p>
                 </div>
               </div>
-              <p className="text-xs text-purplish-blue font-bold">+$2/mo</p>
+              <p className="text-xs text-purplish-blue font-bold">{`+$${ls}/${timePeriod}`}</p>
             </div>
             <div className="option">
               <div className="flex gap-3">
@@ -49,7 +49,7 @@ const AddOns = () => {
                   <p className="text-cool-gray">Custom theme on your profile</p>
                 </div>
               </div>
-              <p className="text-xs text-purplish-blue font-bold">+$2/mo</p>
+              <p className="text-xs text-purplish-blue font-bold">{`+$${cp}/${timePeriod}`}</p>
             </div>
           </div>
         </div>
