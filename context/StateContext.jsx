@@ -4,18 +4,23 @@ const StateContext = createContext();
 
 export function ContextProvider({ children }) {
   let planType;
+
   const [plan, setPlan] = useState('');
   const [planPrice, setPlanPrice] = useState(0);
   const [boxState, setBoxState] = useState(true);
+  const [timePeriod, setTimePeriod] = useState('mo');
+
   const [priceArc, setPriceArc] = useState(9);
   const [priceAdv, setPriceAdv] = useState(12);
   const [pricePro, setPricePro] = useState(15);
-  const [timePeriod, setTimePeriod] = useState('mo');
-  const [optionOs, setOptionOs] = useState(true);
 
   const [os, setOs] = useState(1);
   const [ls, setLs] = useState(2);
   const [cp, setCp] = useState(2);
+
+  const [onlineService, setOnlineService] = useState('');
+  const [largerStorage, setLargerStorage] = useState('');
+  const [customProf, setCustomProf] = useState('');
 
   const planSelection = (e) => {
     planType = e.target.id;
@@ -70,17 +75,28 @@ export function ContextProvider({ children }) {
     // console.log(boxState);
   };
 
-  const addOn = (check) => {
-    if (check.target.checked) {
-      setOptionOs(true);
-      console.log(optionOs);
-      // TODO get the add-on name and price and output in the summary
-    } else {
-      console.log('error');
+  // * Checking for the state of the checkbox
+  const [theState, setTheState] = useState(false);
+
+  const addAddOns = (check) => {
+    const isChecked = check.target.checked;
+    setTheState(isChecked);
+    console.log(theState);
+
+    const theId = check.target.id;
+    console.log(theId);
+
+    // const OS = document.getElementById('OnlineService');
+    // OS.style.display = 'hidden';
+
+    if (theState == true && theId == 'Online Service') {
+      setOnlineService('Online service');
+    } else if (theState == true && theId == 'Larger Storage') {
+      setLargerStorage('Larger storage');
+    } else if (theState == true && theId == 'Custom Prof') {
+      setCustomProf('Customizable profile');
     }
   };
-
-  // TODO Based on the plan and addons selected by the user sum the total amount they need to pay
 
   return (
     <StateContext.Provider
@@ -96,7 +112,11 @@ export function ContextProvider({ children }) {
         cp,
         timePeriod,
         planPrice,
-        addOn,
+        addAddOns,
+        theState,
+        onlineService,
+        largerStorage,
+        customProf,
       }}
     >
       {children}

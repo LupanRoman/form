@@ -3,7 +3,18 @@ import { Link } from 'react-router-dom';
 import StateContext from '../../context/StateContext';
 
 const Summary = () => {
-  const { plan, planPrice, timePeriod } = useContext(StateContext);
+  const {
+    plan,
+    planPrice,
+    timePeriod,
+    onlineService,
+    largerStorage,
+    customProf,
+    os,
+    ls,
+    cp,
+    theState,
+  } = useContext(StateContext);
   return (
     <>
       <div className="flex flex-col justify-between items-center h-full relative md:w-full">
@@ -17,9 +28,7 @@ const Summary = () => {
           <div className="flex flex-col bg-magnolia p-3 rounded-lg">
             <div className="flex justify-between items-center mb-3">
               <div>
-                <h6 className="font-bold text-marine-blue text-sm">
-                  {plan}
-                </h6>
+                <h6 className="font-bold text-marine-blue text-sm">{plan}</h6>
                 <Link to="/plan">
                   <p className="text-cool-gray text-xs underline">Change</p>
                 </Link>
@@ -27,18 +36,35 @@ const Summary = () => {
               <p className="text-marine-blue font-bold text-sm">{`$${planPrice}/${timePeriod}`}</p>
             </div>
             <hr />
-            <div className="flex justify-between pt-3 pb-3">
-              <h6 className="text-sm text-cool-gray">Online service</h6>
-              <p className="text-xs text-marine-blue">+$1/mo</p>
-            </div>
-            <div className="flex justify-between pt-3 pb-3">
-              <h6 className="text-sm text-cool-gray">Larger storage</h6>
-              <p className="text-xs text-marine-blue">+$2/mo</p>
-            </div>
+            {theState == true ? (
+              <div
+                className="flex justify-between pt-3 pb-3"
+                id="OnlineService"
+              >
+                <h6 className="text-sm text-cool-gray">{onlineService}</h6>
+                <p className="text-xs text-marine-blue">{`$${os}/${timePeriod}`}</p>
+              </div>
+            ) : null}
+            {theState == true ? (
+              <div className="flex justify-between pt-3 pb-3">
+                <h6 className="text-sm text-cool-gray">{largerStorage}</h6>
+                <p className="text-xs text-marine-blue">{`$${ls}/${timePeriod}`}</p>
+              </div>
+            ) : null}
+            {theState == true ? (
+              <div className="flex justify-between pt-3 pb-3">
+                <h6 className="text-sm text-cool-gray">{customProf}</h6>
+                <p className="text-xs text-marine-blue">{`$${cp}/${timePeriod}`}</p>
+              </div>
+            ) : null}
           </div>
           <div className="flex justify-between pl-3 pr-3">
             <h6 className="text-xs text-cool-gray">Total (per month)</h6>
-            <p className="text-sm text-purplish-blue font-bold">+$12/mo</p>
+            {theState == true ? (
+              <p className="text-sm text-purplish-blue font-bold">{`$${
+                planPrice + os + ls + cp
+              }/${timePeriod}`}</p>
+            ) : null}
           </div>
         </div>
         <div className="absolute bg-alabaster md:bg-transparent -bottom-5 md:-bottom-10 -right-5 -left-5 p-5 flex justify-between items-center">

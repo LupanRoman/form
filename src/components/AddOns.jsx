@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import StateContext from '../../context/StateContext';
 
 const AddOns = () => {
-  const { addOn, os, ls, cp, timePeriod } = useContext(StateContext);
+  const { os, ls, cp, timePeriod, addAddOns } = useContext(StateContext);
   return (
     <>
       <div className="flex flex-col justify-between items-center h-full relative md:w-full">
@@ -15,9 +15,15 @@ const AddOns = () => {
             Add-ons help enhance your gaming experience
           </p>
           <div className="flex flex-col gap-3">
-            <div className="option">
+            <div className="option" id="Online-service">
               <div className="flex gap-3">
-                <input type="checkbox" name="" id="" className="check-add-on" onChange={addOn} />
+                <input
+                  type="checkbox"
+                  name=""
+                  id="Online Service"
+                  className="check-add-on"
+                  onChange={addAddOns}
+                />
                 <div>
                   <h6 className="text-xs font-bold text-marine-blue">
                     Online service
@@ -27,9 +33,15 @@ const AddOns = () => {
               </div>
               <p className="text-xs text-purplish-blue font-bold">{`+$${os}/${timePeriod}`}</p>
             </div>
-            <div className="option">
+            <div className="option" id="Larger-storage">
               <div className="flex gap-3">
-                <input type="checkbox" name="" id="" className="check-add-on" />
+                <input
+                  type="checkbox"
+                  name=""
+                  id="Larger Storage"
+                  className="check-add-on"
+                  onChange={addAddOns}
+                />
                 <div>
                   <h6 className="text-xs font-bold text-marine-blue">
                     Larger storage
@@ -41,7 +53,13 @@ const AddOns = () => {
             </div>
             <div className="option">
               <div className="flex gap-3">
-                <input type="checkbox" name="" id="" className="check-add-on" />
+                <input
+                  type="checkbox"
+                  name=""
+                  id="Custom Prof"
+                  className="check-add-on"
+                  onChange={addAddOns}
+                />
                 <div>
                   <h6 className="text-xs font-bold text-marine-blue">
                     Customizable profile

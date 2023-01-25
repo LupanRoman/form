@@ -6,8 +6,14 @@ import Pro from '../assets/icon-pro.svg';
 import StateContext from '../../context/StateContext';
 
 const Plan = () => {
-  const { planSelection, changeData, priceArc, priceAdv, pricePro, timePeriod } =
-    useContext(StateContext);
+  const {
+    planSelection,
+    changeData,
+    priceArc,
+    priceAdv,
+    pricePro,
+    timePeriod,
+  } = useContext(StateContext);
 
   return (
     <>
