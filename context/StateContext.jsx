@@ -32,7 +32,6 @@ export function ContextProvider({ children }) {
     } else {
       setPlanPrice(pricePro);
     }
-    // console.log(planType);
   };
 
   const changeData = (event) => {
@@ -41,7 +40,6 @@ export function ContextProvider({ children }) {
     const promoPro = document.getElementById('promo-pro');
 
     if (event.target.checked) {
-      // console.log('yes');
       setPriceArc(90);
       setPriceAdv(120);
       setPricePro(150);
@@ -56,7 +54,6 @@ export function ContextProvider({ children }) {
       promoAdv.style.display = 'flex';
       promoPro.style.display = 'flex';
     } else {
-      // console.log('no');
       setPriceArc(9);
       setPriceAdv(12);
       setPricePro(15);
@@ -72,29 +69,29 @@ export function ContextProvider({ children }) {
       promoPro.style.display = 'none';
     }
     setBoxState((current) => !current);
-    // console.log(boxState);
   };
 
   // * Checking for the state of the checkbox
-  const [theState, setTheState] = useState(false);
+  const [theState, setTheState] = useState(true);
+  const [osChecked, setOsChecked] = useState(false);
+  const [lsChecked, setLsChecked] = useState(false);
+  const [cpChecked, setCpChecked] = useState(false);
 
   const addAddOns = (check) => {
     const isChecked = check.target.checked;
     setTheState(isChecked);
-    console.log(theState);
 
     const theId = check.target.id;
-    console.log(theId);
-
-    // const OS = document.getElementById('OnlineService');
-    // OS.style.display = 'hidden';
 
     if (theState == true && theId == 'Online Service') {
       setOnlineService('Online service');
+      setOsChecked(isChecked);
     } else if (theState == true && theId == 'Larger Storage') {
       setLargerStorage('Larger storage');
+      setLsChecked(isChecked);
     } else if (theState == true && theId == 'Custom Prof') {
       setCustomProf('Customizable profile');
+      setCpChecked(isChecked);
     }
   };
 
@@ -117,6 +114,9 @@ export function ContextProvider({ children }) {
         onlineService,
         largerStorage,
         customProf,
+        osChecked,
+        lsChecked,
+        cpChecked,
       }}
     >
       {children}

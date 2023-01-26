@@ -13,6 +13,9 @@ const Summary = () => {
     os,
     ls,
     cp,
+    osChecked,
+    lsChecked,
+    cpChecked,
     theState,
   } = useContext(StateContext);
   return (
@@ -36,25 +39,34 @@ const Summary = () => {
               <p className="text-marine-blue font-bold text-sm">{`$${planPrice}/${timePeriod}`}</p>
             </div>
             <hr />
-            {theState == true ? (
+
+            {osChecked == true ? (
               <div
                 className="flex justify-between pt-3 pb-3"
                 id="OnlineService"
               >
                 <h6 className="text-sm text-cool-gray">{onlineService}</h6>
-                <p className="text-xs text-marine-blue">{`$${os}/${timePeriod}`}</p>
+                {osChecked == true ? (
+                  <p className="text-xs text-marine-blue">{`$${os}/${timePeriod}`}</p>
+                ) : null}
               </div>
             ) : null}
-            {theState == true ? (
+
+            {lsChecked == true ? (
               <div className="flex justify-between pt-3 pb-3">
                 <h6 className="text-sm text-cool-gray">{largerStorage}</h6>
-                <p className="text-xs text-marine-blue">{`$${ls}/${timePeriod}`}</p>
+                {lsChecked == true ? (
+                  <p className="text-xs text-marine-blue">{`$${ls}/${timePeriod}`}</p>
+                ) : null}
               </div>
             ) : null}
-            {theState == true ? (
+
+            {cpChecked == true ? (
               <div className="flex justify-between pt-3 pb-3">
                 <h6 className="text-sm text-cool-gray">{customProf}</h6>
-                <p className="text-xs text-marine-blue">{`$${cp}/${timePeriod}`}</p>
+                {cpChecked == true ? (
+                  <p className="text-xs text-marine-blue">{`$${cp}/${timePeriod}`}</p>
+                ) : null}
               </div>
             ) : null}
           </div>
@@ -64,7 +76,9 @@ const Summary = () => {
               <p className="text-sm text-purplish-blue font-bold">{`$${
                 planPrice + os + ls + cp
               }/${timePeriod}`}</p>
-            ) : null}
+            ) : (
+              <p className="text-sm text-purplish-blue font-bold">0</p>
+            )}
           </div>
         </div>
         <div className="absolute bg-alabaster md:bg-transparent -bottom-5 md:-bottom-10 -right-5 -left-5 p-5 flex justify-between items-center">
